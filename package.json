@@ -1,7 +1,11 @@
 {
   "name": "powr-ui",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "powr ui",
+  "scripts": {
+    "build": "gulp build",
+    "prepublish": "npm run build"
+  },
   "repositoryx": {
     "type": "git",
     "url": "https://github.com/cryogon/powr-ui.git"
@@ -17,7 +21,7 @@
   },
   "peerDependencies": {
     "react": "^0.14.3",
-    "powr-utils": "^0.0.1"
+    "powr-utils": ">=0.0.1"
   },
   "devDependencies": {
     "del": "^2.2.0",
