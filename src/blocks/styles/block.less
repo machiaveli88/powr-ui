@@ -1,0 +1,160 @@
+@import "~powr-utils/style";
+
+.low-prio-popover {
+  z-index: 1000;
+}
+.block-container:after{
+  clear: both;
+  content: "";
+  display: block;
+}
+.cryo-block{
+   .ui.right.corner.label.mini{
+      display: none;
+   }
+   &:hover{
+      .ui.right.corner.label.mini{
+         display: block;
+      }
+   }
+}
+.cryo-block {
+  position: relative;
+  &.active-block {
+    //animation: fadein 0.5s;
+    //outline: 3px solid rgba(24, 24, 25, 0.08);
+    //outline: 2px dashed @brand-primary;
+     // TODO
+    background-color: fade(gray, 10%);
+    //border-right: 3px solid @color-success;
+    //padding-top: 15px;
+  }
+  &.dragging-over {
+    border-bottom: 10px dashed rgba(0, 0, 0, 0.22);
+  }
+  > .drag-preview {
+     display: none;
+     position: absolute;
+     background-color: rgba(0, 0, 0, 0.48);
+     height: 30%;
+     width: 30%;
+     z-index: 5;
+
+     &.drag-n{
+        display: block;
+        width: 100%;
+        height: 10px;
+        top: 0px;
+        left: 0px;
+     }
+     &.drag-nw{
+        display: block;
+        top: 0px;
+        left: 0px;
+     }
+     &.drag-nww{
+        display: block;
+        top: 0px;
+        left: -30px;
+     }
+     &.drag-ne{
+        display: block;
+        top: 0px;
+        right: 0px;
+     }
+     &.drag-nee{
+        display: block;
+        top: 0px;
+        right: -30px;
+     }
+     &.drag-s, &.drag-sw, &.drag-sww, &.drag-se, &.drag-see{
+        display: block;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 10px;
+     }
+  }
+  /*.handle{
+        position: absolute;
+        left: 0px;
+        height: 100%;
+        display: none;
+     }
+     &:hover .handle{
+        display: block;
+        border-left: 15px solid black;
+        z-index: 3;
+     }*/
+
+  .ui.right.corner.label {
+     // TODO
+    border-color: fade(gray, 75%);
+  }
+}
+
+/*.ItemComponent .popover {
+   position: absolute;
+   z-index: 200;
+   left: initial;
+   right: -280px;
+}*/
+
+.backend .block-list-component.btn-toolbar-top{
+  top: -27px;
+}
+.backend .block-list-component.btn-toolbar-top-right{
+  top: -27px;
+}
+.block-list-component.btn-toolbar-top {
+  position: absolute;
+  z-index: 3;
+  left: 0px;
+  top: -16px;
+}
+.block-list-component.btn-toolbar-top-right {
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: -16px;
+}
+
+.block-list-component.btn-toolbar-left {
+  width: 30px;
+  position: absolute;
+  z-index: 200;
+  font-size: 20px;
+  cursor: hand;
+  left: -46px;
+  top: -3px;
+}
+
+.block-list-component.btn-toolbar-right {
+  width: 30px;
+  position: absolute;
+  z-index: 200;
+  font-size: 20px;
+  cursor: hand;
+  right: -46px;
+  top: -3px;
+}
+
+.block-list-component.btn-toolbar .btn {
+  margin-bottom: 3px;
+  margin-left: -1px;
+}
+.readArea {
+  position: relative;
+  //padding: 0px 0px 10px 0px;
+  clear: both;
+  margin: auto;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,39 @@
+.__Image {
+   p {
+      opacity: 0.5;
+      font-style: italic;
+      font-family: "Times New Roman";
+      margin-top: 10px;
+      margin-bottom: 0px;
+      text-align: center;
+      font-size: 13px;
+   }
+   .__Inner {
+      //display: inline-block;
+      position: relative;
+      width: 100%;
+
+      .content {
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+      }
+
+      img {
+         object-fit: contain;
+         opacity: 1;
+         transition: opacity .5s ease-in;
+         -moz-transition: opacity .5s ease-in;
+         -webkit-transition: opacity .5s ease-in;
+         &:hover {
+            opacity: 0.3;
+            transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -webkit-transition: opacity .5s ease-in-out;
+         }
+      }
+   }
+
+}

@@ -1,0 +1,32 @@
+{
+  "name": "powr-ui",
+  "version": "0.0.1",
+  "description": "powr ui",
+  "repositoryx": {
+    "type": "git",
+    "url": "https://github.com/cryogon/powr-ui.git"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "medium-editor": "^5.10.0",
+    "rc-tooltip": "^3.2.0",
+    "react-dom": "^0.14.6",
+    "react-medium-editor": "^1.6.1",
+    "react-modal2": "^3.0.1",
+    "react-select": "^0.6.12"
+  },
+  "peerDependencies": {
+    "react": "^0.14.3",
+    "powr-utils": "^0.0.1"
+  },
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.3.0",
+    "gulp-sequence": "^0.4.4"
+  },
+  "author": {
+    "name": "Benjamin Kniffler",
+    "email": "benjamin@kniffler.com"
+  }
+}
