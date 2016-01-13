@@ -32,7 +32,6 @@ class BlocksWrapper extends Component{
       this.state = {
          activeBlock: null
       };
-      console.log('Constructor');
       this.onClick = this.onClick.bind(this);
    }
 
@@ -57,7 +56,6 @@ class BlocksWrapper extends Component{
       var clickedOutsideBlockList = !ReactDOM.findDOMNode(this.refs['blocklist']) || !ReactDOM.findDOMNode(this.refs['blocklist']).contains(ev.target);
       var clickedOutsideApp = !document.getElementById('app').contains(ev.target);
 
-      console.log('Onclick');
       const {activeBlock} = this.state;
       if (clickedOutsideBlockList && !clickedOutsideApp) {
          if (activeBlock) {
@@ -68,7 +66,6 @@ class BlocksWrapper extends Component{
 
    render() {
       const {activeBlock} = this.state;
-      console.log('RERENDERINO', activeBlock);
 
       const actions = {
          activeBlock,
@@ -93,11 +90,9 @@ class BlocksWrapper extends Component{
       if(readOnly) return;
       const {activeBlock} = this.state;
       if(!block && activeBlock){
-         console.log('Change active block', block);
          this.setState({activeBlock: null});
       }
       else if (!activeBlock || activeBlock.id !== block.id) {
-         console.log('Change active block2', block);
          if(previousActive){
             previousActive();
             previousActive = null;

@@ -71,7 +71,6 @@ var Component = React.createClass({
          activateBlock,
          setBlockProperty
          } = this.props;
-      console.log(isActive)
 
       const draggingOver = dragHoverIndex === index && isOver ? true : null;
 
