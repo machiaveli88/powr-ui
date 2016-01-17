@@ -1,10 +1,11 @@
 {
   "name": "powr-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "powr ui",
   "scripts": {
     "build": "gulp build",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "patch": "npm version patch --force & npm publish"
   },
   "repositoryx": {
     "type": "git",
