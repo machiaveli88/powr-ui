@@ -75,7 +75,7 @@ var Component = React.createClass({
       const draggingOver = dragHoverIndex === index && isOver ? true : null;
 
       // Get Block Element
-      var Editor = library.get(block.type) || EmptyBlock;
+      var Editor = library[block.type] || EmptyBlock;
 
       const blockClasses = ['cryo-block'];
       if (isActive) {

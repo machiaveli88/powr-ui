@@ -5,6 +5,10 @@ var sortby = require('lodash.sortby');
 import ReactDOM from 'react-dom';
 
 export default class BlockLibrary extends Component{
+   static contextTypes = {
+      blocks: React.PropTypes.object
+   }
+
    constructor() {
       super();
       this.state = {
@@ -15,9 +19,9 @@ export default class BlockLibrary extends Component{
       //ReactDOM.findDOMNode(this.refs.input).focus();
    }
    render() {
-      var {edits} = this.props;
       var {search} = this.state;
 
+      var edits = this.props.edits || this.context.blocks || {get:()=>null};
       var blocks = [];
 
       sortby(Object.keys(edits), key=>key).forEach(key => {

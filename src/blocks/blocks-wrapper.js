@@ -7,6 +7,10 @@ import Blocks from './blocks';
 
 let previousActive = null;
 class BlocksWrapper extends Component{
+   static contextTypes = {
+      blocks: React.PropTypes.object
+   }
+
    static propTypes = {
       // Blocks
       // page: React.PropTypes.object,
@@ -21,7 +25,7 @@ class BlocksWrapper extends Component{
    }
 
    static defaultProps = {
-      library: {get:()=>null},
+      library: null,
       value: [],
       defaultSize: 12,
       containers: false
@@ -79,8 +83,9 @@ class BlocksWrapper extends Component{
          setDragPreview: this.setDragPreview.bind(this)
       };
 
+      var library = this.props.library || this.context.blocks || {get:()=>null};
       return (
-         <Blocks ref={'blocklist'} {...this.props} {...this.state} {...actions} blocks={this.props.value||[]} />
+         <Blocks ref={'blocklist'} {...this.props} {...this.state} {...actions} library={library} blocks={this.props.value||[]} />
       );
    }
 
