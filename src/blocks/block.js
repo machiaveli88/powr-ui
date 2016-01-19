@@ -23,6 +23,10 @@ var Component = React.createClass({
       connectDropTarget: React.PropTypes.func
    },
 
+   getInitialState(){
+      return {};
+   },
+
    shouldComponentUpdate(newProps){
       if(!!newProps.readOnly === !this.props.readOnly){
          return true;
@@ -72,6 +76,8 @@ var Component = React.createClass({
          setBlockProperty
          } = this.props;
 
+      const toolbarProps = this.state.toolbarProps || {};
+
       const draggingOver = dragHoverIndex === index && isOver ? true : null;
 
       // Get Block Element
@@ -92,7 +98,7 @@ var Component = React.createClass({
          }
       }
       var setToolbarProps = (props)=>{
-         this.__toolbarProps = props;
+         this.setState({toolbarProps: props});
       }
 
       // Compose final element
@@ -100,7 +106,7 @@ var Component = React.createClass({
          <div onClick={(e)=>{activateBlock(block);e.stopPropagation();}} className={blockClasses.join(' ')}>
             {(!readOnly && !isActive) ? <a className="ui right corner label mini">&nbsp;</a> : null}
             {draggingOver ? <div className={'drag-preview drag-' + dragHoverPosition} /> : null}
-            {isActive ? connectDragSource(<div><Toolbar {...this.props} additionalProps={this.__toolbarProps}/></div>) : null}
+            {isActive ? connectDragSource(<div><Toolbar {...this.props} {...toolbarProps}/></div>) : null}
             <Editor ref={"block"} {...this.props} active={isActive} {...block.value} setToolbarProps={setToolbarProps}
                     update={(property, value)=>{setBlockProperty(block, {value: {[property]: value}})}}/>
          </div>
