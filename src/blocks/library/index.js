@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 var Block = require('./library-item');
-var sortby = require('lodash.sortby');
+var _ = require('underscore');
 import ReactDOM from 'react-dom';
 
 export default class BlockLibrary extends Component{
@@ -27,7 +27,7 @@ export default class BlockLibrary extends Component{
       var edits = this.props.edits || this.props.library || this.context.blocks || {get:()=>null};
       var blocks = [];
 
-      sortby(Object.keys(edits), key=>key).forEach(key => {
+      _.sortBy(Object.keys(edits), key=>key).forEach(key => {
          const block = edits[key];
          var cats = !block.category ? [] : block.category.split(",");
 

@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from 'react';
-var interpolate = require("powr-utils/interpolate");
-
 import ReactDOM from 'react-dom';
-var sortBy = require('lodash.sortby');
+var _ = require('underscore');
 
 var sizes = {
    13: 'Nahtlos',
@@ -51,7 +49,7 @@ export default class BlockToolbar extends Component{
             });
          }
       });
-      editAsOptions = sortBy(editAsOptions, item=>item.name);
+      editAsOptions = _.sortBy(editAsOptions, item=>item.name);
 
       var edit = library[type];
       var items;

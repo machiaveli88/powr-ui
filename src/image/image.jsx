@@ -1,6 +1,6 @@
 var React = require('react');
 var shuffle = require('powr-utils/array/shuffle');
-var sortby = require("lodash.sortby");
+
 if (BROWSER) {
    require("./image.less")
 }
