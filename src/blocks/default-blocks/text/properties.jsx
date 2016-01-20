@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Check} from 'powr-ui/edits';
+import {Check} from '../../../edits';
 import {Dropcap} from '../_properties';
 
 export default function(component){

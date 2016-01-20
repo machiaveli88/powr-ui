@@ -14,7 +14,6 @@
   "main": "app.js",
   "dependencies": {
     "medium-editor": "^5.10.0",
-    "rc-tooltip": "^3.2.0",
     "react-dom": "^0.14.6",
     "react-medium-editor": "^1.6.1",
     "react-modal2": "^3.0.1",
@@ -25,10 +24,15 @@
     "powr-utils": ">=0.0.1"
   },
   "devDependencies": {
+    "debug": "^2.2.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.3.0",
-    "gulp-sequence": "^0.4.4"
+    "gulp-sequence": "^0.4.4",
+    "powr": "0.0.39",
+    "powr-dev": "0.0.6",
+    "powr-utils": "0.0.14",
+    "sqlite3": "^3.1.1"
   },
   "author": {
     "name": "Benjamin Kniffler",

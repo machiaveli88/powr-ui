@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Check, Input} from 'powr-ui/edits';
+import {Check, Input} from '../../../edits';
 
 export default function(component){
    return class Properties extends Component{

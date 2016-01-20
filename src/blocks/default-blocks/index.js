@@ -2,12 +2,12 @@ var obj = {
    "Line": require("./line"),
    "Title": require("./title"),
    "Text": require("./text"),
-   "Component-2": require("./component-2"),
-   "Component-3": require("./component-3"),
+   "Component2": require("./component-2"),
+   "Component3": require("./component-3"),
    "Gmap": require("./gmap"),
    "Soundcloud": require("./soundcloud"),
    "Youtube": require("./youtube"),
-   "Text-Component": require("./text-component"),
+   "TextComponent": require("./text-component"),
    "Quote": require("./quote")
 };
 

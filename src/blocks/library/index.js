@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import {Input} from 'powr-ui/edits';
 var Block = require('./library-item');
 var sortby = require('lodash.sortby');
 import ReactDOM from 'react-dom';
@@ -9,6 +8,10 @@ export default class BlockLibrary extends Component{
       blocks: React.PropTypes.object
    }
 
+
+   static defaultProps = {
+      library: null
+   }
    constructor() {
       super();
       this.state = {
@@ -21,7 +24,7 @@ export default class BlockLibrary extends Component{
    render() {
       var {search} = this.state;
 
-      var edits = this.props.edits || this.context.blocks || {get:()=>null};
+      var edits = this.props.edits || this.props.library || this.context.blocks || {get:()=>null};
       var blocks = [];
 
       sortby(Object.keys(edits), key=>key).forEach(key => {

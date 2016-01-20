@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import Properties from './properties';
-import {Gmap} from 'powr-ui/edits';
+import {Gmap} from '../../../edits';
 
 class GmapBlock extends Component {
    static title = 'Google Maps';

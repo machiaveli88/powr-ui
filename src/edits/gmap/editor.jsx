@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Input} from 'powr-ui/edits';
+import Input from '../input';
 import Helpers from './helpers';
 
 class GmapSearchEdit extends Component {

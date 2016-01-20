@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import ShortId from "shortid";
 import {Link} from "react-router";
-var Tooltip = require('rc-tooltip');
 
 export default class AnyButton extends Component{
    static defaultProps = {
@@ -65,6 +64,8 @@ export default class AnyButton extends Component{
             </a>
          );
       }
+
+      return e;
 
       if(popover){
          return (

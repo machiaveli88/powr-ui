@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import Properties from './properties';
-import {Image} from 'powr-ui/edits';
+import {Image} from '../../../edits';
 
 class ImgBlock extends Component {
    static title = 'Bild';

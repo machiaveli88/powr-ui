@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Lorem from 'powr-utils/lorem';
 import Properties from './properties';
-import Blocks from 'powr-ui/blocks';
+import Blocks from '../../index';
 
 if(BROWSER){
    require('./component.less');

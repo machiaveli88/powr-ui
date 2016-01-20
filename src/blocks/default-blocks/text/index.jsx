@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Medium} from 'powr-ui/edits';
+import {Medium} from '../../../edits';
 import Lorem from 'powr-utils/lorem';
 import Properties from './properties';
 

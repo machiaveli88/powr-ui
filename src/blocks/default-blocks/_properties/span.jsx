@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Select} from 'powr-ui/edits';
+import {Select} from '../../../edits';
 
 export default class PropertySpan extends Component{
    static defaultProps = {

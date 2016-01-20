@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Check, Select, Input} from 'powr-ui/edits';
+import {Check, Select, Input} from '../../../edits';
 import {Dropcap, Size, Position} from '../_properties';
 
 export default function (component) {

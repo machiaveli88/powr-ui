@@ -4,5 +4,6 @@ module.exports = {
    Image: require('./lib/image'),
    Dropzone: require('./lib/dropzone'),
    AnyButton: require('./lib/any-button'),
+   Modal: require('./lib/modal'),
    Notification: require('./lib/notification')
 }
