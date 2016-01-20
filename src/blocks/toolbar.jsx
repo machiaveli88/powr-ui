@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-var _ = require('underscore');
+var sortBy = require('lodash/collection/sortBy');
 
 var sizes = {
    13: 'Nahtlos',
@@ -49,7 +49,7 @@ export default class BlockToolbar extends Component{
             });
          }
       });
-      editAsOptions = _.sortBy(editAsOptions, item=>item.name);
+      editAsOptions = sortBy(editAsOptions, item=>item.name);
 
       var edit = library[type];
       var items;
