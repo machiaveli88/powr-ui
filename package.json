@@ -1,6 +1,6 @@
 {
   "name": "powr-ui",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "powr ui",
   "scripts": {
     "build": "gulp build",
