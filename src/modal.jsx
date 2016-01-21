@@ -3,7 +3,8 @@ import Modal from "react-modal2";
 
 export default class ModalComponent extends Component{
    static defaultProps = {
-      visible: true
+      visible: true,
+      blank: true
    }
 
    constructor(){
@@ -11,7 +12,11 @@ export default class ModalComponent extends Component{
    }
 
    render() {
-      const {children, title, close, save, visible} = this.props;
+      let {children, title, close, save, visible, blank} = this.props;
+
+      if(children && children.length === 1){
+         console.log(children);
+      }
 
       const titleComponent = title ? (
          <h1 className="ui left aligned header" style={{margin: 0}}>
@@ -22,30 +27,66 @@ export default class ModalComponent extends Component{
       if(!visible){
          return null;
       }
-      return (
-         <Modal
-            onClose={()=>close ? close() : null}
-            closeOnEsc={true}
-            closeOnBackdropClick={true}
-            backdropClassName='ui dimmer modals page transition visible active'
-            modalClassName='ui small modal transition visible scrolling'>
-            <div className="ui small test modal transition visible active scrolling modalWithoutBorderInner" style={{minHeight: "200px"}}>
-               <div className="ui segment basic">
+
+      var inner;
+      if(!blank){
+         inner = (
+            <ModalComponent.Container>
+               <ModalComponent.Content>
                   {titleComponent}
                   {children}
-               </div>
-               <div className="actions">
-                  {close ? <div className="ui black deny right labeled icon button" onClick={()=>close()}>
+               </ModalComponent.Content>
+               <ModalComponent.Buttons>
+                  {close ? <ModalComponent.Button color="black" onClick={()=>close()}>
                      Abbruch
                      <i className="remove icon"></i>
-                  </div> : null}
-                  {save ? <div className="ui positive right labeled icon button" onClick={()=>save()}>
+                  </ModalComponent.Button> : null}
+                  {save ? <ModalComponent.Button color="positive" onClick={()=>save()}>
                      Speichern
                      <i className="checkmark icon"></i>
-                  </div> : null}
-               </div>
-            </div>
+                  </ModalComponent.Button> : null}
+               </ModalComponent.Buttons>
+            </ModalComponent.Container>
+         );
+      }
+      else{
+         inner = children;
+      }
+      return (
+         <Modal onClose={()=>close ? close() : null} closeOnEsc={true} closeOnBackdropClick={true}
+            backdropClassName='ui dimmer modals page transition visible active' modalClassName='ui small modal transition visible scrolling'>
+            {inner}
          </Modal>
       );
    }
+}
+
+ModalComponent.Buttons = function(props){
+   return (
+      <div className="actions">
+         {props.children}
+      </div>
+   )
+}
+ModalComponent.Button = function(props){
+   return (
+      <div className={"ui "+props.color+" deny right labeled icon button"} onClick={props.onClick}>
+         {props.title || props.label || props.children}
+         {props.icon ? <i className={props.icon + " icon"}></i> : null}
+      </div>
+   )
+}
+ModalComponent.Content = function(props){
+   return (
+      <div className="ui segment basic">
+         {props.children}
+      </div>
+   )
+}
+ModalComponent.Container = function(props){
+   return (
+      <div className="ui small test modal transition visible active scrolling modalWithoutBorderInner" style={{minHeight: "200px"}}>
+         {props.children}
+      </div>
+   )
 }

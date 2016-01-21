@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-var sortBy = require('lodash/collection/sortBy');
+import sortBy from 'lodash/collection/sortBy';
 
 var sizes = {
    13: 'Nahtlos',

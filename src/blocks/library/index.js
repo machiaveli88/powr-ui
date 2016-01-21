@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 var Block = require('./library-item');
-var sortBy = require('lodash/collection/sortBy');
+import sortBy from 'lodash/collection/sortBy';
 import ReactDOM from 'react-dom';
 
 export default class BlockLibrary extends Component{
@@ -50,7 +50,7 @@ export default class BlockLibrary extends Component{
             })
          }
       });
-      blocks = sortby(blocks, item=>item.name);
+      blocks = sortBy(blocks, item=>item.name);
 
       return (
          <div>
