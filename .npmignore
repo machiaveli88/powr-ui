@@ -26,3 +26,5 @@ build
 .gitignore
 .gitattributes
 test/
+sessions/
+*.db

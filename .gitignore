@@ -16,3 +16,4 @@ server/sessions
 temp
 uploads
 build
+sessions/*
