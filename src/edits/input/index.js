@@ -17,7 +17,7 @@ export default React.createClass({
         updateValue(e.target.value);
     },
     render: function () {
-        const {lines, placeholder, description, value, required, type, icon} = this.props;
+        const {lines, placeholder, description, value, required, type, icon, defaultValue} = this.props;
         // <div class="input-group m-b">
         //    <span class="input-group-addon">@</span>
         //    <input type="text" class="form-control" placeholder="Username">
@@ -26,14 +26,14 @@ export default React.createClass({
         const input = (lines > 1) ? (
             <textarea type={type}
                       rows={lines}
-                      placeholder={placeholder || description}
+                      placeholder={defaultValue || placeholder || description}
                       onChange={this.changed}
                       value={value}
                       required={required}>
                 </ textarea>
         ) : (
             <input type={type}
-                   placeholder={placeholder || description}
+                   placeholder={defaultValue || placeholder || description}
                    onChange={this.changed}
                    value={value}
                    required={required}/>

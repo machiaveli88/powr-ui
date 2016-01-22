@@ -6,6 +6,8 @@ export default React.createClass({
       return {
          yes: "Ja",
          no: "Nein",
+         defaultValue: null,
+         value: null,
          info: null,
          style: {},
          disabled: false
@@ -28,9 +30,11 @@ export default React.createClass({
    },
 
    render: function () {
-      const {value, text, label, title, info, description, yes, no, style, disabled} = this.props;
+      const {value, text, label, title, info, description, yes, no, style, disabled, defaultValue} = this.props;
 
-      var checked = value === true || false;
+      var v = typeof value === 'undefined' || value === null || value === undefined ? defaultValue : value;
+      var checked = !!v;
+
       var word = (text || title || label)
          ? (text || title || label)
          : (checked ? yes : no)
@@ -39,7 +43,6 @@ export default React.createClass({
          ? <span style={{color: "red", fontStyle: "italic", fontSize: "80%"}}>{info}</span>
          : null;
 
-      var id = ShortId.generate();
       return (
          <div className="ui checkbox" style={style} onClick={()=>this.onChecked()}>
             <input type="checkbox" onChange={()=>{}} value={checked} checked={checked} disabled={disabled}/>
