@@ -12,6 +12,9 @@ export default class Container extends Component {
                   <Link to="/">Hello</Link>
                </li>
                <li>
+                  <Link to="/filter">Filter</Link>
+               </li>
+               <li>
                   <Link to="/edits">Edits</Link>
                </li>
                <li>

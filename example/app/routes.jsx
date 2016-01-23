@@ -6,11 +6,13 @@ import Edits from './components/edits';
 import Blocks from './components/blocks';
 import Tooltip from './components/tooltip';
 import Modal from './components/modal';
+import Filter from './components/filter';
 
 export default function(handler){
    return (
       <Route component={Container}>
          <Route path="/" component={Default}></Route>
+         <Route path="/filter" component={Filter}></Route>
          <Route path="/edits" component={Edits}></Route>
          <Route path="/blocks" component={Blocks}></Route>
          <Route path="/tooltip" component={Tooltip}></Route>
