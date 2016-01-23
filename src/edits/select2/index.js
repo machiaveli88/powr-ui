@@ -16,12 +16,14 @@ var Component = React.createClass({
       const {updateValue} = this.props;
       updateValue(val);
    },
-   fetchOptions: function(fetch) {
+   fetchOptions: function (fetch) {
       return (input, callback) => {
-         fetch.then((items) =>{
-            if(this.isMounted()){
+         fetch.then((items) => {
+            if (this.isMounted()) {
                callback(null, {
-                  options: items.map(item=>{return {label: item.name, value: item.name}}),
+                  options: items.map(item=> {
+                     return {label: item.name, value: item.name}
+                  }),
                   complete: true
                });
             }
@@ -37,7 +39,7 @@ var Component = React.createClass({
          let v = value !== undefined && value !== null ? value : 'null';
          return {label: label || name || value, value};
       });
-      if(tags){
+      if (tags) {
          return <Select
             placeholder={'Klicken zum Suchen ...'}
             clearValueText={'Leeren'}

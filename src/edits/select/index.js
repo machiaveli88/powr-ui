@@ -9,20 +9,20 @@ module.exports = React.createClass({
    },
    changed: function (e) {
       const {updateValue} = this.props;
-      if(e.target.value === "null"){
+      if (e.target.value === "null") {
          return updateValue(null);
       }
       var number = parseInt(e.target.value);
       var value = null;
-      if(e.target.value !== null){
-         if(isNaN(number)){
+      if (e.target.value !== null) {
+         if (isNaN(number)) {
             value = e.target.value;
          }
          // Workaround UUID
-         else if(number+'' === e.target.value+''){
+         else if (number + '' === e.target.value + '') {
             value = number;
          }
-         else{
+         else {
             value = e.target.value;
          }
       }
@@ -33,14 +33,14 @@ module.exports = React.createClass({
       const {ausgeklappt} = this.state;
 
       let _options;
-      if(!options){
+      if (!options) {
          _options = [];
       }
-      else if(Array.isArray(options)){
+      else if (Array.isArray(options)) {
          _options = options.slice();
       }
-      else{
-         _options = Object.keys(options).map(function(key){
+      else {
+         _options = Object.keys(options).map(function (key) {
             return {
                label: key,
                value: options[key]
@@ -54,7 +54,7 @@ module.exports = React.createClass({
 
       return (
          <select onChange={this.changed} value={value} name="account" style={style}
-                 className={"form-control " + (ausgeklappt ? "active" : "")}>
+                 className={"ui selection dropdown " + (ausgeklappt ? "active" : "")}>
             {_options.map(function (item) {
                let {label, name, value} = item;
                let v = value !== undefined && value !== null ? value : "null";
